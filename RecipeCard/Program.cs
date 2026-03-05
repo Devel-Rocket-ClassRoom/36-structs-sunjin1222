@@ -10,8 +10,8 @@ Ingredient ingredient4 = new Ingredient("마늘", 3, "쪽");
 Ingredient[] Ingredients = { ingredient1, ingredient2, ingredient3, ingredient4 };
 RecipeCard recipeCard1 = new RecipeCard("토마토파스타", 2, Ingredients);
 recipeCard1.PrintRecipe();
-RecipeCard recipeCard2 = new RecipeCard("토마토파스타", 4, Ingredients);
-recipeCard2.PrintRecipe();
+RecipeCard newrecipe = recipeCard1.ScaleRecipe(4);
+newrecipe.PrintRecipe();
 
 struct Ingredient
 { 
@@ -51,21 +51,22 @@ struct RecipeCard
 
     public RecipeCard ScaleRecipe(int newServings)
     {
-        double factor = (double)newServings / Servings;
-
-        Ingredient[] newIngredients = new Ingredient[Ingredients.Length];
+        double amount = (double)newServings / Servings;
+        Ingredient[] newingredients = new Ingredient[Ingredients.Length];
 
         for (int i = 0; i < Ingredients.Length; i++)
         {
-            newIngredients[i] = new Ingredient(
-                Ingredients[i].Name,
-                Ingredients[i].Amount * factor,
-                Ingredients[i].Unit
-            );
-        }
+            double newamount= Ingredients[i].Amount* amount;
 
-        return new RecipeCard(Name, newServings, newIngredients);
+            newingredients[i]=new Ingredient(
+                Ingredients[i].Name,
+                newamount,
+                Ingredients[i].Unit
+                );
+        }
+        return new RecipeCard(Name, newServings, newingredients);
     }
+
 
 }
 
