@@ -1,6 +1,8 @@
 # 레시피 카드 관리
 
-요리 레시피를 관리하는 프로그램을 작성하세요. 재료를 나타내는 `Ingredient` 구조체와 레시피를 나타내는 `RecipeCard` 구조체를 만들고, 인분수에 맞게 재료량을 조정하는 기능을 구현하세요.
+요리 레시피를 관리하는 프로그램을 작성하세요. 재료를 나타내는 `Ingredient` 
+구조체와 레시피를 나타내는 `RecipeCard` 구조체를 만들고, 인분수에 맞게 재료량을 
+조정하는 기능을 구현하세요.
 
 **요구사항:**
 
@@ -11,8 +13,10 @@
 2. `RecipeCard` 구조체를 정의하세요.
    - `Name` (string), `Servings` (int), `Ingredients` (Ingredient[]) 필드
    - 세 값을 받아 초기화하는 생성자
+	- 
    - `PrintRecipe()` 메서드: 레시피명, 인분수, 재료 목록을 출력
-   - `ScaleRecipe(int newServings)` 메서드: 인분수에 맞게 재료량을 조정한 새 `RecipeCard`를 반환
+   - `ScaleRecipe(int newServings)` 메서드: 인분수에 맞게 재료량을 조정한 새 
+	- `RecipeCard`를 반환
 
 3. 2인분 기준 레시피를 생성하세요 (레시피명: "토마토 파스타").
    - 스파게티면 200g, 토마토소스 150ml, 양파 1개, 마늘 3쪽
